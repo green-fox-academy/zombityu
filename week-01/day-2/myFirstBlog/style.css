@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+    background-image: url("https://previews.123rf.com/images/sezgen/sezgen1502/sezgen150200105/38640069-vector-sketch-drawing-book-illustration.jpg");
+    background-position: center;
+}
+header{
+    background-color: gray;
+    margin-top: 20px; 
+    padding: 25px 0px; 
+}
+
+header h1{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 100px;
+}
+main{
+    margin: 0 100px;
+    background-size: cover;
+}
+.links{
+    display: inline;
+}
+h1{
+    margin: 0;
+}
+
+h2{
+    font-size: 30px;
+}
+.content{
+    font-size: 18px;
+}
+
+.title{
+    font-size: 18px;
+}
+.title-text{
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 80%; 
+    margin-bottom: 20px;
+    ba 
+        
+}
+
+.submit{
+    width: 100px;
+    height: 30px;
+}
+
+.out{
+    margin: 30px 0px;
+}
+
+.label{
+    margin-bottom: 30px;
+    font-size:28px; 
+}
+
