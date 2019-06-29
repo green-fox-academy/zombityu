@@ -5,18 +5,19 @@ public class AverageOfInput {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int sum = 0;
-        double avg = 0;
+        int num = 0;
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Add an integer: ");
+        System.out.println("How many numbers would you like:  ");
+        num=scan.nextInt();
+
+        System.out.println("Add " + num+ " integer: ");
+        for (int i = 0; i < num; i++) {
             int input = scan.nextInt();
             sum += input;
-            avg += 1;
-
 
         }
         System.out.println("Sum: "+sum);
-        System.out.println("Average: "+(double)sum/avg);
+        System.out.println("Average: "+(float)sum/num);
 
 
 
