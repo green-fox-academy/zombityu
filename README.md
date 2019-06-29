@@ -1,9 +1,8 @@
- MY WEBSITES
+#Welcome on my github
 
  
-My homework repo: https://github.com/zombityu/theBlog 
-
-my github website: https://zombityu.github.io/
+ ##My homework website
+  [Zombityu](https://zombityu.github.io/)
 
 
 YIPPIII :)
