@@ -1,11 +1,13 @@
 public class DiagonalMatrix {
     public static void main(String[] args) {
-        int [][] matrix = {{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
+        int [][] matrix = new int [4][4];
 
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; column <matrix[row].length ; column++) {
-                System.out.print(matrix[row][column]+" ");
-                
+                if (matrix[row]==matrix[column]){
+                    System.out.print(1);
+                }else
+                    System.out.print(0);
             }
             System.out.println();
         }
