@@ -10,59 +10,58 @@ public class PersonalFinance {
         expens.add(800);
         expens.add(120);
 
-        spend(expens);
-        greatest(expens);
-        cheapest(expens);
-        average(expens);
+        System.out.println("The sum of the expense "+spend(expens));
+        System.out.println("The greatest "+greatest(expens));
+        System.out.println("Cheapest: "+cheapest(expens));
+        System.out.println("The average: "+average(expens));
 
 
        System.out.println(expens);
     }
 
-    private static void average(ArrayList<Integer> array) {
+    private static float average(ArrayList<Integer> array) {
         int count = 0;
         int sum = 0;
         for (int av:array) {
             sum += av;
             count++;
 
-
         }
-        System.out.println((float)sum/count);
-
+        float average = (float)sum/count;
+        return average;
     }
 
-    private static void cheapest(ArrayList<Integer> array) {
-        int a = 0;
+    private static int cheapest(ArrayList<Integer> array) {
+        int a = array.get(0);
         for (int i = 0; i <array.size() ; i++) {
-            if (array.get(0)>array.get(i)){
+            if (a>array.get(i)){
                a = array.get(i);
             }
 
         }
-        System.out.println(a);
+        return a;
 
     }
 
-    private static void greatest(ArrayList<Integer> array) {
+    private static int  greatest(ArrayList<Integer> array) {
         int n = 0;
         for (int b:array) {
             if (n<b){
                 n=b;
             }
         }
-        System.out.println(n);
+        return n;
 
 
 
     }
 
-    private static void spend(ArrayList <Integer> array) {
+    private static int spend(ArrayList <Integer> array) {
         int sum = 0;
         for (int s:array) {
             sum += s;
         }
-        System.out.println(sum);
+        return sum;
         }
         
         
