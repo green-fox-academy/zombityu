@@ -10,17 +10,20 @@ public class TelephoneBook {
         telephone.put("Amanda D. Newland","319-243-5613");
         telephone.put("Brooke P. Askew","Brooke P. Askew");
         johnMiller(telephone);
-
+        System.out.println(johnMiller(telephone));
     }
 
-    private static void johnMiller(HashMap<String, String>map) {
+    private static String johnMiller(HashMap<String, String>map) {
+        String john = "";
         for (String name:map.keySet()) {
             String key = name;
             String value = map.get(name);
             if (key.equals("John K. Miller")){
-                System.out.println(key+" "+value);
+                john = key+" "+value;
             }
         }
+
+        return john;
 
 
 
