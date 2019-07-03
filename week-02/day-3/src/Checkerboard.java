@@ -4,27 +4,37 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
+public class Checkerboard {
+    public static void mainDraw(Graphics graphics) {
+        // Fill the canvas with a checkerboard pattern.
 
-    public static void mainDraw(Graphics graphics){
-        // create a function that draws one square and takes 3 parameters:
-        // the x and y coordinates of the square's top left corner and the graphics
-        // and draws a 50x50 square from that point.
-        // draw 3 squares with that function.
-        // avoid code duplication.
+        for (int i = 0; i <8; i++) {
+            for (int j = 0; j <8; j++) {
+                if ((i+j)%2==0) {
+                    chessBlack(graphics,40*i,40*j);
+                }
 
-        int a = 10+(int)(Math.random()*101);
-        int b = 10+(int)(Math.random()*101);
-        for (int i = 1; i <4; i++) {
-            rect(graphics, a*i,b*i);
+            }
+            }
         }
 
 
-    }
 
-    private static void rect(Graphics g, int x, int y) {
-        g.drawRect(x,y,50,50);
 
+
+
+
+
+
+
+//    private static void chessWhite(Graphics g, int a,int b) {
+//        g.setColor(Color.white);
+//        g.fillRect(a,b,40,40);
+//    }
+
+    private static void chessBlack(Graphics g,int x, int y) {
+        g.setColor(Color.black);
+        g.fillRect(x,y,40,40);
 
 
     }
@@ -51,5 +61,4 @@ public class PositionSquare {
             mainDraw(graphics);
         }
     }
-
 }

@@ -4,29 +4,28 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
-
-    public static void mainDraw(Graphics graphics){
-        // create a function that draws one square and takes 3 parameters:
-        // the x and y coordinates of the square's top left corner and the graphics
-        // and draws a 50x50 square from that point.
-        // draw 3 squares with that function.
-        // avoid code duplication.
-
-        int a = 10+(int)(Math.random()*101);
-        int b = 10+(int)(Math.random()*101);
-        for (int i = 1; i <4; i++) {
-            rect(graphics, a*i,b*i);
+public class FunctionToCenter {
+    public static void mainDraw(Graphics graphics) {
+        // Create a function that draws a single line and takes 3 parameters:
+        // The x and y coordinates of the line's starting point and the graphics
+        // and draws a line from that point to the center of the canvas.
+        // Fill the canvas with lines from the edges, every 20 px, to the center.
+        int r = 0;
+        for (int j = 0; j <2; j++) {
+            for (int i = 0; i < 17; i++) {
+                line(graphics,i*20,0);
+            }
+            for (int i = 0; i <17; i++) {
+                line(graphics,320,i*20);
+            }
+            
         }
 
 
     }
 
-    private static void rect(Graphics g, int x, int y) {
-        g.drawRect(x,y,50,50);
-
-
-
+    private static void line(Graphics g,int x, int y) {
+        g.drawLine(x,y,160,160);
     }
 
     // Don't touch the code below
@@ -51,5 +50,4 @@ public class PositionSquare {
             mainDraw(graphics);
         }
     }
-
 }

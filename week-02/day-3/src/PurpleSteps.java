@@ -9,7 +9,6 @@ public class PurpleSteps {
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
 
-        graphics.setColor(new Color(255,0,255));
 
         for (int i = 1; i <21 ; i++) {
             purple(graphics,10*i,10*i);
@@ -21,7 +20,10 @@ public class PurpleSteps {
     }
 
     private static void purple(Graphics g, int x, int y) {
+        g.setColor(new Color(255,0,255));
         g.fillRect(x,y,10,10);
+        g.setColor(Color.black);
+        g.drawRect(x,y,10,10);
     }
 
     // Don't touch the code below

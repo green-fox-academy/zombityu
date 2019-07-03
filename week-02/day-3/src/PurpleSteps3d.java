@@ -8,19 +8,21 @@ public class PurpleSteps3d {
     public static void mainDraw(Graphics graphics) {
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r4.png]
+
+
         int g = 0;
-        graphics.setColor(new Color(176,78,240));
-        for (int i = 1; i < 8; i++) {
-            purple3d(graphics, g+10,10*i);
-            g = 10*i/2*i+5*i;
+        for (int i = 0; i <5; i++) {
+            g+=10*i;
+            purple3d(graphics,10+g,10+10*i);
+
         }
-
-
-
     }
 
     private static void purple3d(Graphics g,int x, int y ) {
+        g.setColor(new Color(176,78,240));
         g.fillRect(x,x,y,y);
+        g.setColor(Color.black);
+        g.drawRect(x,x,y,y);
     }
 
     // Don't touch the code below
