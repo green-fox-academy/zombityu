@@ -8,8 +8,8 @@ public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
         // Fill the canvas with a checkerboard pattern.
 
-        for (int i = 0; i <8; i++) {
-            for (int j = 0; j <8; j++) {
+        for (int i = 0; i <HEIGHT; i++) {
+            for (int j = 0; j <WIDTH; j++) {
                 if ((i+j)%2==0) {
                     chessBlack(graphics,40*i,40*j);
                 }
@@ -18,19 +18,6 @@ public class Checkerboard {
             }
         }
 
-
-
-
-
-
-
-
-
-
-//    private static void chessWhite(Graphics g, int a,int b) {
-//        g.setColor(Color.white);
-//        g.fillRect(a,b,40,40);
-//    }
 
     private static void chessBlack(Graphics g,int x, int y) {
         g.setColor(Color.black);
