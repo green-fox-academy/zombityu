@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class TelephoneBook {
     public static void main(String[] args) {
@@ -8,24 +9,30 @@ public class TelephoneBook {
         telephone.put("John K. Miller","402-247-8568");
         telephone.put("Hortensia E. Foster","606-481-6467");
         telephone.put("Amanda D. Newland","319-243-5613");
-        telephone.put("Brooke P. Askew","Brooke P. Askew");
+        telephone.put("Brooke P. Askew","307-687-2982");
         johnMiller(telephone);
         System.out.println(johnMiller(telephone));
-//        whosNumber();
+        System.out.println(whosNumber(telephone));
     }
 
-//    private static String whosNumber(HashMap<String, String> map) {
-//
-//        return ;
-//    }
+        private static String whosNumber(HashMap<String, String> map) {
+            String whos = "";
+            for (Map.Entry<String,String> entry:map.entrySet()) {
+                if (entry.getValue().equals("307-687-2982")){
+                    whos = entry.getKey();
+                }
+                
+            }
+
+        return whos;
+    }
 
     private static String johnMiller(HashMap<String, String>map) {
         String john = "";
         for (String name:map.keySet()) {
-            String key = name;
             String value = map.get(name);
-            if (key.equals("John K. Miller")){
-                john = key+" "+value;
+            if (name.equals("John K. Miller")){
+                john = name+" "+value;
             }
         }
 
