@@ -8,14 +8,14 @@ public class Triangles {
 
     public static void mainDraw(Graphics graphics) {
 
-        int side = 22;
-
-
-        for (int i = 0; i <side; i++) {
-            int push = i*side;
-            graphics.drawLine(160+push,0+push,0+side,320
-            );
-        }
+//        int side = 22;
+//
+//
+//        for (int i = 0; i <side; i++) {
+//            int push = i*side;
+//            graphics.drawLine(160+push,0+push,0+side,320
+//            );
+////        }
 
 
 

@@ -12,10 +12,25 @@ public class TelephoneBook {
         telephone.put("Brooke P. Askew","307-687-2982");
         johnMiller(telephone);
         System.out.println(johnMiller(telephone));
+        System.out.println("-------------");
         System.out.println(whosNumber(telephone));
+        System.out.println("--------------");
+        System.out.println(doWeKnow(telephone));
     }
 
-        private static String whosNumber(HashMap<String, String> map) {
+    private static String doWeKnow(HashMap<String, String> map) {
+        String answer = "Sorry we Don't know the number";
+        for (Map.Entry<String, String> entry:map.entrySet()){
+            if (entry.getKey().equals("Chris E. Myers")){
+                answer ="The searched phone number is: "+entry.getValue();
+            }
+        }
+
+
+        return answer;
+    }
+
+    private static String whosNumber(HashMap<String, String> map) {
             String whos = "";
             for (Map.Entry<String,String> entry:map.entrySet()) {
                 if (entry.getValue().equals("307-687-2982")){
@@ -23,8 +38,7 @@ public class TelephoneBook {
                 }
                 
             }
-
-        return whos;
+            return whos;
     }
 
     private static String johnMiller(HashMap<String, String>map) {

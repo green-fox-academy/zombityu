@@ -6,36 +6,19 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class EnvelopeStar {
     public static void mainDraw(Graphics graphics) {
         int distance = 10;
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        int d = 0;
+        int size = WIDTH/2;
 
-        graphics.setColor(Color.green);
-        for (int i = 0; i <15; i++) {
-            graphics.drawLine(160,20+a,160-a,160);
-            a=distance*i;
+        for (int i = 0; i <14; i++) {
+            starLine(graphics,size,20+distance*i,size-distance*i,size);
+            starLine(graphics,size-distance*i,size,size,WIDTH-20-distance*i);
+            starLine(graphics,size,20+distance*i,size+distance*i,size);
+            starLine(graphics,size,WIDTH-20-distance*i,size+distance*i,size);
         }
-        for (int i = 0; i <15; i++) {
-            graphics.drawLine(160-b,160,160,300-b);
-            b=distance*i;
         }
-        for (int i = 0; i <15; i++) {
-            graphics.drawLine(160,20+c,160+c,160);
-            c=distance*i;
-
-        }
-        for (int i = 0; i <15; i++) {
-            graphics.drawLine(160,300-d,160+d,160);
-            d=distance*i;
-        }
-
-
+    private static void starLine(Graphics g, int x, int y, int x2, int y2) {
+        g.setColor(Color.green);
+        g.drawLine(x,y,x2,y2);
     }
-
-
-
-
 
 
     // Don't touch the code below
