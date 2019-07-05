@@ -16,7 +16,7 @@ public class ShoppingList2 {
         System.out.println(whoBuysMoreRice(listAlice,listBob));
         System.out.println(whoBuysMorePotato(listAlice,listBob));
 //        differentProduct(listAlice,listBob);
-        moreProduct(listAlice,listBob);
+        System.out.println(moreProduct(listAlice,listBob));
 
 
 
@@ -24,15 +24,23 @@ public class ShoppingList2 {
 
     }
 
-    private static int moreProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
+    private static String moreProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
         String whoBuy="";
         int sumAlice = 0;
+        int sumBob = 0;
 
         for (int a:listAlice.values()){
             sumAlice+=a;
         }
 
-        return sumAlice;
+        for (int b:listBob.values()) {
+            sumBob+=b;
+        }
+
+        if (sumAlice<sumBob){
+            return "Bob Has more product";
+        }
+        return "Alice has more product" ;
     }
 
 //    private static String differentProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
