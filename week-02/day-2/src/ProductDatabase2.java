@@ -8,7 +8,7 @@ public class ProductDatabase2 {
         listAdd(list);
         System.out.println(costLess201(list));
         System.out.println(costMoreThan150(list));
-        
+
     }
 
 
