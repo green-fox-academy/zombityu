@@ -11,13 +11,15 @@ public class SubInt {
     private static ArrayList subInt(Integer a, int [] array) {
         ArrayList<Integer> list = new ArrayList<>();
         ArrayList<Integer> listNew = new ArrayList<>();
+
         for (int i = 0; i <array.length; i++) {
             list.add(array[i]);
     }
 
 
 
-       return listNew;
+
+       return list;
     }
 
 }

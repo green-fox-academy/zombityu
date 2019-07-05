@@ -11,21 +11,17 @@ public class ShoppingList2 {
         listBob(listBob);
         listAlice(listAlice);
 
-        System.out.println("Bob pays: "+bobPays(listBob,mainList));
-        System.out.println("Alice pays: "+alicePays(listAlice,mainList));
+        System.out.println("Bob pays: " + sumPays(listBob,mainList));
+        System.out.println("Alice pays: " + sumPays(listAlice,mainList));
         System.out.println(whoBuysMoreRice(listAlice,listBob));
         System.out.println(whoBuysMorePotato(listAlice,listBob));
-//        differentProduct(listAlice,listBob);
+        System.out.println(differentProduct(listAlice,listBob));
         System.out.println(moreProduct(listAlice,listBob));
-
-
-
 
 
     }
 
     private static String moreProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
-        String whoBuy="";
         int sumAlice = 0;
         int sumBob = 0;
 
@@ -43,10 +39,14 @@ public class ShoppingList2 {
         return "Alice has more product" ;
     }
 
-//    private static String differentProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
-//
-//
-//    }
+    private static String differentProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
+        if (listBob.size()<listAlice.size()){
+            return "Alica has more different kind of product";
+        }
+
+        return "Bob has more different kind of product.";
+    }
+
 
     private static String whoBuysMorePotato(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
         int potatoA = 0;
@@ -95,23 +95,10 @@ public class ShoppingList2 {
 
     }
 
-    private static float  alicePays(HashMap<String, Integer> listAlice, HashMap<String, Double> mainList) {
-        float sumA = 0;
-        for (Map.Entry<String,Double>entryMain:mainList.entrySet()) {
-            for (Map.Entry<String,Integer>entryB:listAlice.entrySet()) {
-                if (entryMain.getKey().equals(entryB.getKey())){
-                    sumA += entryMain.getValue()*entryB.getValue();
-                }
-            }
-        }
-
-     return sumA;
-    }
-
-    private static float bobPays(HashMap<String, Integer> listBob, HashMap<String, Double> mainList) {
+    private static float sumPays(HashMap<String, Integer> shoppingList, HashMap<String, Double> priceList) {
         float sum = 0;
-        for (Map.Entry<String,Double>entryMain:mainList.entrySet()) {
-            for (Map.Entry<String,Integer>entryB:listBob.entrySet()) {
+        for (Map.Entry<String,Double>entryMain:priceList.entrySet()) {
+            for (Map.Entry<String,Integer>entryB:shoppingList.entrySet()) {
                 if (entryMain.getKey().equals(entryB.getKey())){
                     sum += entryMain.getValue()*entryB.getValue();
                 }
