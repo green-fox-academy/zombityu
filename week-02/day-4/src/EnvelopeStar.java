@@ -9,15 +9,17 @@ public class EnvelopeStar {
         int size = WIDTH/2;
 
         for (int i = 0; i <14; i++) {
-            starLine(graphics,size,20+distance*i,size-distance*i,size);
-            starLine(graphics,size-distance*i,size,size,WIDTH-20-distance*i);
-            starLine(graphics,size,20+distance*i,size+distance*i,size);
-            starLine(graphics,size,WIDTH-20-distance*i,size+distance*i,size);
+            starLine(graphics,size,distance,i);
         }
         }
-    private static void starLine(Graphics g, int x, int y, int x2, int y2) {
+
+    private static void starLine(Graphics g, int size, int distance, int i) {
         g.setColor(Color.green);
-        g.drawLine(x,y,x2,y2);
+        g.drawLine(size,20+distance*i,size-distance*i,size);
+        g.drawLine(size-distance*i,size,size,WIDTH-20-distance*i);
+        g.drawLine(size,20+distance*i,size+distance*i,size);
+        g.drawLine(size,WIDTH-20-distance*i,size+distance*i,size);
+
     }
 
 
