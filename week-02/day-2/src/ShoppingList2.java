@@ -15,7 +15,8 @@ public class ShoppingList2 {
         System.out.println("Alice pays: "+alicePays(listAlice,mainList));
         System.out.println(whoBuysMoreRice(listAlice,listBob));
         System.out.println(whoBuysMorePotato(listAlice,listBob));
-
+//        differentProduct(listAlice,listBob);
+        moreProduct(listAlice,listBob);
 
 
 
@@ -23,8 +24,23 @@ public class ShoppingList2 {
 
     }
 
+    private static int moreProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
+        String whoBuy="";
+        int sumAlice = 0;
+
+        for (int a:listAlice.values()){
+            sumAlice+=a;
+        }
+
+        return sumAlice;
+    }
+
+//    private static String differentProduct(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
+//
+//
+//    }
+
     private static String whoBuysMorePotato(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
-        String whoP = "Alice buy more potato.";
         int potatoA = 0;
         int potatoB = 0;
         for (Map.Entry<String,Integer>entryA:listAlice.entrySet()) {
@@ -40,19 +56,15 @@ public class ShoppingList2 {
         }
 
         if (potatoA<potatoB){
-            whoP = "Bob is buy more potato.";
+            return "Bob buy more potato.";
         }
 
-        return whoP;
-
-
-
+        return "Alice buy more potato.";
 
 
     }
 
     private static String whoBuysMoreRice(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
-        String who ="Alice is buy more rice.";
         int riceA = 0;
         int riceB = 0;
         for (Map.Entry<String,Integer>entryA:listAlice.entrySet()) {
@@ -68,10 +80,10 @@ public class ShoppingList2 {
         }
 
         if (riceA<riceB){
-            who = "Bob is buy more rice.";
+            return "Bob buy more rice.";
         }
 
-        return who;
+        return "Alice buy more rice.";
 
     }
 
