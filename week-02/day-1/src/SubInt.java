@@ -9,17 +9,16 @@ public class SubInt {
 
 
     private static ArrayList subInt(Integer a, int [] array) {
-        ArrayList<Integer> list = new ArrayList<>();
-        ArrayList<Integer> listNew = new ArrayList<>();
-
+        ArrayList<String> list = new ArrayList<>();
+        Arrays.toString(array);
+        String aa = "";
         for (int i = 0; i <array.length; i++) {
-            list.add(array[i]);
+            aa = Integer.toString(array[i]);
+            if (aa.contains(Integer.toString(a))){
+                list.add(Integer.toString(i));
+            }
     }
-
-
-
-
-       return list;
+        return list;
     }
 
 }

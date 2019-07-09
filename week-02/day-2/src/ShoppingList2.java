@@ -13,8 +13,8 @@ public class ShoppingList2 {
 
         System.out.println("Bob pays: " + sumPays(listBob,mainList));
         System.out.println("Alice pays: " + sumPays(listAlice,mainList));
-        System.out.println(whoBuysMoreRice(listAlice,listBob));
-        System.out.println(whoBuysMorePotato(listAlice,listBob));
+        System.out.println(whoBuysMore(listAlice,listBob,"Rice"));
+        System.out.println(whoBuysMore(listAlice,listBob,"Potato"));
         System.out.println(differentProduct(listAlice,listBob));
         System.out.println(moreProduct(listAlice,listBob));
 
@@ -48,50 +48,28 @@ public class ShoppingList2 {
     }
 
 
-    private static String whoBuysMorePotato(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
-        int potatoA = 0;
-        int potatoB = 0;
-        for (Map.Entry<String,Integer>entryA:listAlice.entrySet()) {
-            if (entryA.getKey().equals("Potato")){
-                potatoA = entryA.getValue();
-
-            }
-        }
-        for (Map.Entry<String,Integer>entryB:listBob.entrySet()) {
-            if (entryB.getKey().equals("Potato")){
-                potatoB = entryB.getValue();
-            }
-        }
-
-        if (potatoA<potatoB){
-            return "Bob buy more potato.";
-        }
-
-        return "Alice buy more potato.";
 
 
-    }
-
-    private static String whoBuysMoreRice(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob) {
+    private static String whoBuysMore(HashMap<String, Integer> listAlice, HashMap<String, Integer> listBob, String product) {
         int riceA = 0;
         int riceB = 0;
         for (Map.Entry<String,Integer>entryA:listAlice.entrySet()) {
-            if (entryA.getKey().equals("Rice")){
+            if (entryA.getKey().equals(product)){
                 riceA = entryA.getValue();
 
             }
         }
         for (Map.Entry<String,Integer>entryB:listBob.entrySet()) {
-            if (entryB.getKey().equals("Rice")){
+            if (entryB.getKey().equals(product)){
                 riceB = entryB.getValue();
             }
         }
 
         if (riceA<riceB){
-            return "Bob buy more rice.";
+            return "Bob buy more "+product;
         }
 
-        return "Alice buy more rice.";
+        return "Alice buy more "+product;
 
     }
 

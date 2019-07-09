@@ -8,7 +8,7 @@ public class Triangles {
 
     public static void mainDraw(Graphics graphics) {
 
-        int lines = 7;
+        int lines = 4;
         int size = WIDTH;
         int distance =WIDTH/lines;
         int step = WIDTH/distance+1;
