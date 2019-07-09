@@ -9,7 +9,7 @@ public class PrintEachLine {
 
 
         try {
-            Path filePath = Paths.get("my-file.txt");
+            Path filePath = Paths.get("apple.txt");
             List <String> list = Files.readAllLines(filePath);
             System.out.println(list);
         }catch(IOException e){
