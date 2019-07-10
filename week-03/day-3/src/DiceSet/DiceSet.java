@@ -42,11 +42,10 @@ public class DiceSet {
         DiceSet diceSet = new DiceSet();
 //
         diceSet.roll();
-        for (int i = 0; i <diceSet.dice.size(); i++) {
-           while(diceSet.dice.get(i)!= 6){
-               diceSet.reroll(i);
-           }
-
+        for (int i = 0; i <6; i++) {
+            while(diceSet.dice.get(i) != 6){
+                diceSet.reroll(i);
+            }
         }
         System.out.println(diceSet.getCurrent());
 
