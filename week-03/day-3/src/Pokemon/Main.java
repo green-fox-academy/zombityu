@@ -16,10 +16,14 @@ public class Main {
         Pokemon wildPokemon = new Pokemon("Oddish", "leaf", "water");
 
         // Which pokemon should Ash use?
+        String poke = "";
+        for (int i = 0; i <pokemonOfAsh.size(); i++) {
+            if (pokemonOfAsh.get(i).effectiveAgainst.equals(wildPokemon.type)){
+                poke = pokemonOfAsh.get(i).name;
+            }
+        }
 
-        
-
-        System.out.print("I choose you, ");
+        System.out.print("I choose you, "+poke);
     }
 
     private static List<Pokemon> initializePokemons() {
