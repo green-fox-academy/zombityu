@@ -5,6 +5,7 @@ public class Teacher {
 
 
     void answer(){
+        System.out.println("I'm answered youre question.");
     }
 
     void teach(Student student){

@@ -5,13 +5,9 @@ public class Main {
         Teacher teacher = new Teacher();
         Student student = new Student();
 
-
         student.question(teacher);
-            teacher.answer();
-
 
         teacher.teach(student);
-            student.learn();
 
     }
 
