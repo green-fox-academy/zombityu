@@ -19,7 +19,7 @@ public class Main {
 
     private static void useSharpie(SharpieSet sharpieSet, int inkAmount) {
         for (int i = 0; i <sharpieSet.sharpieList.size() ; i++) {
-            sharpieSet.sharpieList.get(i).use(inkAmount);
+            sharpieSet.sharpieList.get(0).use(inkAmount);
         }
     }
 

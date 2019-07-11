@@ -5,8 +5,8 @@ public class Animal {
     int thirst;
     String name;
 
-    Animal(){
-        hunger = 50;
+    Animal( int hunger){
+        this.hunger = hunger;
         thirst = 50;
     }
 

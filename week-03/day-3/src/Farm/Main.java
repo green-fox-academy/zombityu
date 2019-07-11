@@ -1,16 +1,13 @@
 package Farm;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-        Farm myFarm = new Farm();
-        Animal pig = new Animal();
-        Animal horse = new Animal();
-        Animal dog = new Animal();
+        Farm myFarm = new Farm(6);
 
-        myFarm.add(pig);
-        myFarm.add(horse);
-        myFarm.add(dog);
+
 
     }
 }
