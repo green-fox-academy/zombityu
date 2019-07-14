@@ -14,10 +14,17 @@ public class Farm {
     }
 
         public ArrayList <Animal> animalList() {
-            Animal dog = new Animal(50);
-            Animal chicken = new Animal(20);
-            Animal cat = new Animal(10);
-            Animal pig = new Animal(70);
+            Animal dog = new Animal("dog");
+            dog.play();
+            Animal chicken = new Animal("chicken");
+            chicken.eat();
+            chicken.eat();
+            Animal cat = new Animal("cat");
+            cat.drink();
+            Animal pig = new Animal("pig");
+            pig.eat();
+            pig.eat();
+            pig.eat();
 
             animalList.add(dog);
             animalList.add(chicken);
@@ -36,15 +43,19 @@ public class Farm {
 
 
     void slaughter (){
+        int index = 0;
         int min =animalList.get(0).hunger;
-        List<Animal> death = new ArrayList<>();
         for (int i = 0; i <animalList.size(); i++) {
             if (animalList.get(i).hunger < min){
                 min = animalList.get(i).hunger;
-                death.add(animalList.get(i));
+                index = i;
             }
         }
-        animalList.removeAll(death);
+        animalList.remove(index);
     }
-    
+
+    @Override
+    public String toString() {
+        return  "AnimalList " + animalList;
+    }
 }

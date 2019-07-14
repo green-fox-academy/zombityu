@@ -6,9 +6,26 @@ import java.util.List;
 public class SharpieSet {
     List<Sharpie> sharpieList = new ArrayList<>();
 
-    void add(String color,double width){
-        sharpieList.add(new Sharpie(color,width));
+    SharpieSet(){
+      sharpieList();
     }
+
+
+  public List<Sharpie> sharpieList (){
+    Sharpie blue = new Sharpie("Blue",20,12);
+    Sharpie green = new Sharpie("Green",30,10);
+    Sharpie red = new Sharpie("Red",25,22);
+    Sharpie yellow = new Sharpie("Yellow",10,30);
+
+    sharpieList.add(blue);
+    blue.use(12);
+    sharpieList.add(green);
+    green.use(10);
+    sharpieList.add(red);
+    sharpieList.add(yellow);
+
+    return sharpieList;
+  }
 
 
    int countUsable(){
@@ -33,4 +50,9 @@ public class SharpieSet {
        sharpieList.removeAll(temp);
        return sharpieList;
    }
+
+  @Override
+  public String toString() {
+    return "sharpieList " + sharpieList;
+  }
 }

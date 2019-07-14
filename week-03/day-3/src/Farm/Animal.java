@@ -5,8 +5,9 @@ public class Animal {
     int thirst;
     String name;
 
-    Animal( int hunger){
-        this.hunger = hunger;
+    Animal( String name){
+        this.name = name;
+        hunger = 50;
         thirst = 50;
     }
 
@@ -21,4 +22,10 @@ public class Animal {
         thirst++;
     }
 
+    @Override
+    public String toString() {
+        return ", name: " + name +
+                ", hunger: " + hunger +
+                ", thirst: " + thirst;
+    }
 }

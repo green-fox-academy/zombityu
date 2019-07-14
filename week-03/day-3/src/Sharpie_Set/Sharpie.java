@@ -5,13 +5,18 @@ public class Sharpie {
     double width;
     double inkAmount;
 
-    Sharpie( String color, double width){
+    Sharpie( String color, double width, int inkAmount){
         this.color = color;
         this.width = width;
-        inkAmount = 100;
+        this.inkAmount = inkAmount;
     }
 
     void use(double amount){
         this.inkAmount -= amount;
+    }
+
+    @Override
+    public String toString() {
+        return  color + " Width: "+width+" Ink: "+ inkAmount;
     }
 }
