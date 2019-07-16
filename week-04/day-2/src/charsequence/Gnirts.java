@@ -14,17 +14,11 @@ public class Gnirts implements CharSequence {
 
   @Override
   public char charAt(int index) {
-    char [] nameArr = name.toCharArray();
-    for (int i = name.length()-1; i >= 0 ; i--) {
-      if (i == index){
-        return nameArr[i];
-      }
-    }
-    return 0;
+   return this.name.charAt(name.length() - 1 - index);
   }
 
   @Override
   public CharSequence subSequence(int start, int end) {
-    return null;
+    return name.subSequence(name.length() - 1 - end, name.length() - start);
   }
 }
