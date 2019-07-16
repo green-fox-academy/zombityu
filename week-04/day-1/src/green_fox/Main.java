@@ -1,6 +1,7 @@
 package green_fox;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
@@ -45,5 +46,12 @@ public class Main {
     awesome.addMentor(mentor);
     awesome.addMentor(gandhi);
     awesome.info();
+
+
+    Student johnTheClone =john.clone();
+
+    System.out.println(johnTheClone.name+" "+johnTheClone.age+" "+johnTheClone.gender+" "+johnTheClone.previousOrganization);
+
+
   }
 }

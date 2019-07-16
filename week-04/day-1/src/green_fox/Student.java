@@ -1,6 +1,6 @@
 package green_fox;
 
-public class Student extends Person {
+public class Student extends Person implements Cloneable {
   String previousOrganization = "toTheSchoolLife";
   int skippedDays = 0;
 
@@ -12,6 +12,17 @@ public class Student extends Person {
     super.age = age;
     super.gender = gender;
     this.previousOrganization = previousOrganization;
+  }
+
+
+  @Override
+  protected Student clone() {
+    Student newClone = new Student();
+    newClone.name = super.name;
+    newClone.age = super.age;
+    newClone.gender = super.gender;
+    newClone.previousOrganization = this.previousOrganization;
+    return newClone;
   }
 
   @Override

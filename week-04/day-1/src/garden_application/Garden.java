@@ -5,9 +5,10 @@ import java.util.List;
 
 public class Garden {
 
-  List<Plant> plants = new ArrayList<>();
+  List<Plant> plants;
 
   Garden() {
+    plants = new ArrayList<>();
   }
 
   void addPlants(Plant plant) {
