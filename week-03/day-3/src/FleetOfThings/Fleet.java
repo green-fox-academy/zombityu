@@ -1,6 +1,8 @@
 package FleetOfThings;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Fleet {
     private ArrayList<Thing> things;
@@ -20,5 +22,6 @@ public class Fleet {
             result += (i+1) + ". " + things.get(i) + "\n";
         }
         return result;
+
     }
 }

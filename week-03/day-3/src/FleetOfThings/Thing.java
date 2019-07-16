@@ -1,6 +1,6 @@
 package FleetOfThings;
 
-public class Thing {
+public class Thing implements Comparable <Thing> {
     private String name;
     private boolean completed;
 
@@ -15,5 +15,10 @@ public class Thing {
     @Override
     public String toString() {
         return (completed ? "[x] " : "[ ] ") + name;
+    }
+
+    @Override
+    public int compareTo(Thing o) {
+       return Boolean.compare(completed,o.completed);
     }
 }

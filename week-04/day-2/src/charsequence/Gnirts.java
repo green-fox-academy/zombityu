@@ -9,14 +9,15 @@ public class Gnirts implements CharSequence {
 
   @Override
   public int length() {
-    return 0;
+     return this.name.length();
   }
 
   @Override
   public char charAt(int index) {
-    for (int i =name.length()-1; i > 0; i--) {
+    char [] nameArr = name.toCharArray();
+    for (int i = name.length()-1; i >= 0 ; i--) {
       if (i == index){
-        return
+        return nameArr[i];
       }
     }
     return 0;
