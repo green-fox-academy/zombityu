@@ -15,7 +15,6 @@ public class CountLetters {
         letterMap.put(a,letterMap.get(a)+1);
       }
     }
-
     return letterMap;
   }
 }

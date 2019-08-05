@@ -1,7 +1,6 @@
 public class Factorio {
     public static void main(String[] args) {
-        int myNumber = 0;
-        factorio(myNumber);
+        int myNumber = 25;
         System.out.println(factorio(myNumber));
         
     }

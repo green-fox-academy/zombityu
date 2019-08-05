@@ -1,5 +1,6 @@
 package extension;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -37,14 +38,20 @@ public class Extension {
   }
 
   public String translate(String hungarian) {
+    List<Character> charList = new ArrayList<>();
     String teve = hungarian;
     int length = teve.length();
     for (int i = 0; i < length; i++) {
       char c = teve.charAt(i);
       if (isVowel(c)) {
-        teve = String.join(c + "v" + c, teve.split(""+c));
-        i+=2;
-        length+=2;
+        charList.add(c);
+        if (charList.contains(c)){
+          teve = String.join(c + "v" + c, teve.split(""+c));
+          charList.remove(i);
+          i+=2;
+          length+=2;
+
+        }
       }
     }
     return teve;
