@@ -1,0 +1,49 @@
+body{
+    margin: 0 0;
+    background-color: lavender;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    width: 500px;
+    height: 300px;
+}
+
+
+.card{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.third-sized {
+    width: 33%;
+}
+
+.card.third-sized{
+    height: 300px;
+}
+
+input{
+    margin: 10px;
+    border: 0;
+    border-bottom: 1px solid gray;!important;
+}
+
+h1{
+    margin-bottom: 50px;
+    margin-top: 0;
+    font-size: 50px;
+    font-weight: normal;
+    font-family:  Calibri, serif;
+
+}
