@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Web Shop</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" >
+</head>
+<body>
+    <form>
+        <h1>MyShop</h1>
+        <div class="buttons">
+            <input type="button" value="Only available" onclick="location.href='/only-available'">
+            <input type="button" value="Cheapest First" onclick="location.href='/cheapest-first'">
+            <input type="button" value="Contains Nike">
+            <input type="button" value="Average Stock">
+            <input type="button" value="most Expensive Available">
+        </div>
+        <div>
+            <label>Search for:</label>
+            <input type="text" placeholder="...something like nike">
+            <input type="button" value="Search">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity Of Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${items}">
+                    <td th:text="${item.getName()}"></td>
+                    <td th:text="${item.getDescription()}"></td>
+                    <td th:text="${item.getPrice()}"></td>
+                    <td th:text="${item.getQuantityOfStock()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
