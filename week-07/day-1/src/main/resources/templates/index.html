@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>BankOFSimba</title>
+</head>
+<body>
+    <div>
+        <h1 th:text="|${firstAcc.getName()} ${firstAcc.getBalance()} Zebra ${firstAcc.getAnimalType()}|">
+        </h1>
+        <p th:utext="|This is an <em>HTML</em> text. <b>Enjoy yourself!</b>|"></p>
+    </div>
+</body>
+</html>
