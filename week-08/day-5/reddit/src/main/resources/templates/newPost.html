@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/style.css" >
+    <title>New post</title>
+</head>
+<body>
+    <h1>Submit new post</h1>
+    <form action="#" th:action="@{/submit}" method="post">
+            <div>
+                <label>Title:</label>
+                <input type="text" name="title" required>
+            </div>
+            <div>
+                <label>URL:</label>
+                <input type="text" name="url" class="url" required>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+                <a class="cancel" href="/">Cancel</a>
+            </div>
+    </form>
+</body>
+</html>

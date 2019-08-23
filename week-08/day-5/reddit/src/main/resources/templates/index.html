@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/style.css" >
+    <title>Mydit</title>
+</head>
+<body>
+    <div>
+        <a class="submit" href="/submit">Submit new post</a>
+        <a class="login" href="/login">Login</a>
+        <h1>Trending posts</h1>
+    </div>
+    <div>
+        <table>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.getRate()}"></td>
+                <td><a th:href="@{'{id}/plus'(id=${post.getId()})}">+</a></td>
+                <td><a th:href="@{'{id}/minus' (id=${post.getId()})}">-</a></td>
+                <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}"></a></td>
+                <td th:text="${post.getStartTime()}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body{
+    margin: 0 0;
+    height:100vh;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+a{
+    font-size: 20px;
+    color:blue;
+}
+
+table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td{
+    padding:10px 20px;
+    font-size: 25px !important;
+}
+
+form{
+    margin: 0 auto;
+    height: 25%;
+    width: 25%;
+    text-align: center;
+}
+
+.url{
+    margin: 15px 0px;
+}
+
+.login{
+    float: right;
+    margin-right: 20px;
+}
+
+.submit{
+    margin-left: 20px;
+}
+
