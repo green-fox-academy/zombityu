@@ -1,9 +1,12 @@
 package com.example.todomysql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -15,13 +18,51 @@ public class Todo {
   private boolean urgent;
   private boolean done;
 
+  @Temporal(TemporalType.DATE)
+  private Date created;
+
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  private LocalDate expire;
+
+  @ManyToOne
+  Assignee assignee;
+
   public Todo() {
+    created = new Date();
   }
 
-  public Todo(String title, boolean urgent, boolean done) {
+  public Todo(String title, boolean urgent, boolean done,LocalDate expire) {
     this.title = title;
     this.urgent = urgent;
     this.done = done;
+    this.expire = expire;
+    created = new Date();
+
+  }
+
+  public LocalDate getExpire() {
+    return expire;
+  }
+
+  public void setExpire(LocalDate expire) {
+    this.expire = expire;
+  }
+
+  public Date getCreated() {
+    return created;
+  }
+
+  public void setCreated(Date created) {
+    this.created = created;
+  }
+
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 
   public long getId() {

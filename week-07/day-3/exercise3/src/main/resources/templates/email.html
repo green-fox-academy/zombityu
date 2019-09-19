@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ValidateYourEmail</title>
+</head>
+<body>
+    <h1>Validate Your email</h1>
+    <form method="post" action="http://localhost:8080/useful/email">
+        <input class="indexinput" type="text" name="email" id="email" placeholder="email">
+        <input type="submit" value="submit">
+        <p th:if="${bool}" th:attr="style='color:green'" th:text="|${email} is Valid|"></p>
+        <p th:unless="${bool == true || email == null}" th:attr="style='color:red'" th:text="|${email} is not valid|"></p>
+    </form>
+</body>
+</html>

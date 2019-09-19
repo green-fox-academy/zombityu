@@ -9,7 +9,9 @@ import java.util.List;
 @Service
 public interface TodoRepo extends CrudRepository<Todo,Long> {
 
+    List<Todo> findAll();
     List<Todo> findAllByDone(boolean isActive);
     void deleteById(long id);
     Todo findById(long id);
+    List<Todo>findByTitle(String search);
 }

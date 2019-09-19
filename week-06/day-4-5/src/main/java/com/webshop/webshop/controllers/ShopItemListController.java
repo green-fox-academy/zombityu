@@ -5,7 +5,6 @@ import com.webshop.webshop.models.ItemList;
 import com.webshop.webshop.models.ShopItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Comparator;
@@ -58,6 +57,44 @@ public class ShopItemListController {
             .collect(Collectors.toList());
 
     model.addAttribute("items",sortedList);
+
+    return "index";
+  }
+
+  @RequestMapping("/contains-nike")
+  public String getNike(Model model){
+    List<ShopItem> nike = itemList.getItemsList().stream()
+            .filter(item -> item.getDescription().toLowerCase().contains("nike") || item.getDescription().toLowerCase().contains("nike"))
+            .collect(Collectors.toList());
+
+    model.addAttribute("items",nike);
+
+    return "index";
+  }
+
+  @RequestMapping("/average-stock")
+  public String getAverages(Model model){
+    double avg = itemList.getItemsList().stream()
+            .mapToInt(item -> item.getQuantityOfStock())
+            .average()
+            .getAsDouble();
+
+    model.addAttribute("items","Average stock: "+avg);
+
+    return "subIndex";
+  }
+
+  @RequestMapping("/most-expensive")
+  public String getMostExpensive(Model model){
+    ShopItem mostExpensive = itemList.getItemsList().stream()
+            .max(Comparator.comparing(ShopItem::getPrice))
+            .get();
+
+    List<ShopItem> mostExpensiveList = itemList.getItemsList().stream()
+            .filter(item -> item.getPrice() == mostExpensive.getPrice())
+            .collect(Collectors.toList());
+
+    model.addAttribute("items",mostExpensiveList);
 
     return "index";
   }

@@ -13,11 +13,18 @@ h1{
     color: #1fbcd2;
     border-bottom:1px solid #1fbcd2;
     font-family:  Calibri, serif;
+}
 
+h2{
+    font-size: 30px;
+}
+
+label{
+    color: #f1453d;
 }
 
 input[type=button]{
-    padding:10px;
+    padding:12px;
     margin-bottom: 20px;
     background-color: #f1453d;
     color: white;
@@ -28,13 +35,20 @@ input[type=button]{
     text-transform: uppercase;
 }
 
+input[type=text]{
+    border: 2px solid #f1453d;
+    border-radius: 10px;
+    width: 87%;
+    height: 30px;
+}
+
 p{
     margin-bottom:0;
     color: #f1453d;
 }
 
 .buttons{
-    text-align: center;
+    width: 100%;
 
 }
 

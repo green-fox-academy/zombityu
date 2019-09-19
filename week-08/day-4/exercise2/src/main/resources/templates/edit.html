@@ -20,7 +20,16 @@
             <input type="checkbox" th:field="*{done}" id="done" name="done">
         </div>
         <div>
-            <input type="hidden" th:field="*{id}">
+            <label for="expire">Expirate Time</label>
+            <input type="date" th:field="*{expire}" id="expire" name="expire">
+        </div>
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <select name="assignee" id="assignee">
+                <option th:each="newassignee : ${assignee}" th:value="${newassignee.getId()}" th:text="${newassignee.getName()}"></option>
+            </select>
+        </div>
+        <div>
             <input type="submit"  value="Submit">
             <a th:href="'/todo/list'">Cancel</a>
         </div>

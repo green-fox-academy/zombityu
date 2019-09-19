@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>WebShop</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" >
+</head>
+<body>
+    <form>
+        <h1>MyShop</h1>
+        <div class="buttons">
+            <input type="button" value="Only available" onclick="location.href='/only-available'">
+            <input type="button" value="Cheapest First" onclick="location.href='/cheapest-first'">
+            <input type="button" value="Contains Nike" onclick="location.href='/contains-nike'">
+            <input type="button" value="Average Stock" onclick="location.href='/average-stock'">
+            <input type="button" value="most Expensive Available" onclick="location.href='/most-expensive'">
+        </div>
+        <div>
+            <label>Search for:</label>
+            <input type="text" placeholder="...something like nike">
+            <input type="button" value="Search">
+        </div>
+        <h2 th:text=${items}></h2>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Fox Club</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Information</a></li>
+        <li><a th:href="'/nutritionStore?name='+${name.getName()}">Nutrition Store </a></li>
+        <li><a th:href="'/trickCenter?name='+${name.getName()}">Trick Center</a></li>
+        <li>Action History</li>
+
+    </ul>
+    <img src="greenfox.png">
+    <p th:text="'This is '+${name.getName()}+' . Currently living on '+${name.getFood()}+' and '+${name.getDrink()}+'. He known '+${name.getTricks().size()}+' tricks.'"></p>
+        <h1>Known tricks</h1>
+        <ul>
+            <li th:each="trick : ${name.getTricks()}" th:text="${trick.getName()}"></li>
+        </ul>
+    </div>
+</body>
+</html>

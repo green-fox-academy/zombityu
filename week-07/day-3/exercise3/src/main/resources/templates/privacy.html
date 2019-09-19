@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Encode/Decode</title>
+</head>
+<body>
+    <h1>Decode and encode a text with a number</h1>
+    <form method="post" action="http://localhost:8080/useful/caesar">
+        <input type="text" name="text" id="text" placeholder="text">
+        <input type="number" name="number" id="number">
+        <input type="submit" value="Submit">
+        <h1 th:text="${encode}"></h1>
+        <h1 th:text="${decode}"></h1>
+    </form>
+
+</body>
+</html>
