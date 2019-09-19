@@ -1,0 +1,9 @@
+﻿@model  Todo
+
+    <form asp-controller="Todo" asp-action="Update" asp-route-id="@Model.TodoId" method="post">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name" value="@Model.Name" class="form-control" required />
+            <button class="btn btn-primary" type="submit">Edit</button>
+        </div>
+    </form>
